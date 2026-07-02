@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Face Mask Detection Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ TOP STATUS BAR ============ -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-mark">◈</span>
+      <div class="brand-text">
+        <span class="brand-title">FACE MASK DETECTION MONITOR</span>
+        <span class="brand-sub">Made by Sanket Kashyap</span>
+      </div>
+    </div>
+
+    <div class="topbar-status">
+      <div class="status-chip" id="connChip">
+        <span class="dot"></span>
+        <span id="connLabel">Connecting…</span>
+      </div>
+      <div class="status-chip" id="camChip">
+        <span class="dot"></span>
+        <span id="camLabel">Camera Idle</span>
+      </div>
+      <div class="status-chip mono" id="clockChip">--:--:--</div>
+    </div>
+  </header>
+
+  <!-- ============ MAIN GRID ============ -->
+  <main class="grid">
+
+    <!-- ---------- LIVE MONITOR PANEL ---------- -->
+    <section class="panel monitor-panel">
+      <div class="panel-head">
+        <h2>Live Monitor</h2>
+        <span class="panel-tag">CAM</span>
+      </div>
+
+      <div class="viewport" id="viewport">
+        <img id="feedImg" class="feed-img" alt="Live detection feed" style="display:none;">
+
+        <div class="viewport-empty" id="viewportEmpty">
+          <span class="scan-icon">▣</span>
+          <p>Feed offline</p>
+          <p class="empty-sub">Press Start Detection to begin monitoring</p>
+        </div>
+
+        <!-- corner bracket overlay (signature element) -->
+        <div class="bracket tl"></div>
+        <div class="bracket tr"></div>
+        <div class="bracket bl"></div>
+        <div class="bracket br"></div>
+
+        <div class="rec-indicator" id="recIndicator">
+          <span class="rec-dot"></span> REC
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-start" id="startBtn">
+          <span class="btn-icon">▶</span> Start Detection
+        </button>
+        <button class="btn btn-stop" id="stopBtn" disabled>
+          <span class="btn-icon">■</span> Stop Detection
+        </button>
+      </div>
+
+      <div class="alert-banner" id="alertBanner">
+        <span class="alert-dot"></span>
+        <span id="alertText">No violations in this session</span>
+      </div>
+    </section>
+
+    <!-- ---------- VIOLATION LOG PANEL ---------- -->
+    <section class="panel log-panel">
+      <div class="panel-head">
+        <h2>Violation Log</h2>
+        <span class="panel-tag" id="entryCount">0 entries</span>
+      </div>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label for="dateFilter">Date</label>
+          <select id="dateFilter"><option value="All">All</option></select>
+        </div>
+        <div class="filter-group">
+          <label for="locationFilter">Location</label>
+          <select id="locationFilter"><option value="All">All</option></select>
+        </div>
+        <button class="btn btn-refresh" id="refreshBtn">↻ Refresh</button>
+        <button class="btn btn-delete-all" id="deleteAllBtn">🗑 Delete All</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="log-table">
+          <thead>
+            <tr>
+              <th>Snapshot</th>
+              <th>Image</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="logTableBody">
+            <!-- rows injected by script.js -->
+          </tbody>
+        </table>
+        <div class="table-empty" id="tableEmpty">No violations recorded yet.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ---------- IMAGE LIGHTBOX ---------- -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="Violation snapshot">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

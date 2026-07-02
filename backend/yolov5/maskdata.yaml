@@ -1,0 +1,6 @@
+train: C:/Users/sanke/Desktop/YOLO_FaceMask/dataset/images/train
+val: C:/Users/sanke/Desktop/YOLO_FaceMask/dataset/images/valid
+test: C:/Users/sanke/Desktop/YOLO_FaceMask/dataset/images/test
+
+nc: 2
+names: ['NoMask', 'Mask']

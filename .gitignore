@@ -1,0 +1,21 @@
+# --- personal/runtime data (never push these) ---
+backend/NoMaskImages/
+backend/log.db
+
+# --- model weights ---
+# best.pt is small enough (well under GitHub's 100MB limit) to commit
+# directly, so the repo is runnable right after cloning. If you retrain
+# and end up with a much larger file, revisit this.
+
+# --- if you vendor the yolov5 repo in, don't nest its own .git ---
+backend/yolov5/.git/
+
+# --- python ---
+backend/venv/
+__pycache__/
+*.pyc
+
+# --- editor/OS cruft ---
+.vscode/
+.DS_Store
+Thumbs.db

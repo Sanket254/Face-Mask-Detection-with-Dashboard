@@ -1,0 +1,6 @@
+train: "C:/Users/sanke/Desktop/New Face Mask/new dataset/images/train"
+val: "C:/Users/sanke/Desktop/New Face Mask/new dataset/images/valid"
+test: "C:/Users/sanke/Desktop/New Face Mask/new dataset/images/test"
+
+nc: 2
+names: ['NoMask', 'Mask']
