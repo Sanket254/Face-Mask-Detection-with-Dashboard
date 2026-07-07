@@ -19,17 +19,12 @@ FaceMaskDetection/
     └── script.js
 ```
 
-Your existing `yolov5/` repo and `best.pt` weights, and the
-`NoMaskImages/` folder, can stay exactly where they already are on disk —
-`detector.py` points at them via `MODEL_REPO`, `WEIGHTS_PATH`, and
-`SAVE_DIR` at the top of the file, same as your original script.
 
-## 2. What to install (step by step, VS Code)
+## 2. What to instal (step by step, VS Code)
 
 1. **Install Python 3.10 or 3.11** if you don't already have it (avoid
    3.12+ for now — some torch/YOLOv5 builds lag behind).
 2. **Open the `FaceMaskDetection` folder in VS Code**
-   (`File > Open Folder…`).
 3. **Install the Python extension** in VS Code if you don't have it
    (Ms-Python.python) — gives you linting + the interpreter picker.
 4. **Create a virtual environment** (Terminal in VS Code, from the
@@ -43,11 +38,9 @@ Your existing `yolov5/` repo and `best.pt` weights, and the
    ```
    pip install -r requirements.txt
    ```
-   Note: this installs the CPU build of torch by default. If you trained
-   with CUDA and want GPU inference locally too, install torch separately
-   first using the command from https://pytorch.org/get-started/locally/
-   for your CUDA version, *then* run the line above.
-6. **Live Server extension (optional, for the frontend)** — install
+   Note: this installs the CPU build of torch by default.
+   
+7. **Live Server extension (optional, for the frontend)** — install
    "Live Server" by Ritwick Dey in VS Code so you can right-click
    `index.html` → "Open with Live Server" instead of double-clicking the
    file. Not required, but avoids some browser quirks with fetch() on
