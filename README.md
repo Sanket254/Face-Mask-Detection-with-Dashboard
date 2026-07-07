@@ -1,11 +1,5 @@
 # Face Mask Detection — Web App (FastAPI + HTML/CSS/JS)
 
-This merges your two Streamlit apps (live camera + violator dashboard) into
-one web frontend, backed by a FastAPI server. Your detection/saving logic
-from `simplesave.py` is preserved almost line-for-line inside
-`backend/detector.py` — it's just wrapped in a class so it can be
-started/stopped from a button instead of running as a blocking script.
-
 ## 1. Directory structure
 
 Put things exactly like this (or adjust the paths in `detector.py` /
