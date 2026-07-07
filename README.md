@@ -57,5 +57,5 @@ while YOLOv5 loads the model.
 
 **Frontend**: open `frontend/index.html` directly in your browser, or use
 Live Server. It talks to the backend at `http://127.0.0.1:8000` by
-default — see the note below.
+default.
 
